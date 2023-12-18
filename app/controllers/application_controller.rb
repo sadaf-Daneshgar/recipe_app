@@ -9,12 +9,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
-  private
 
-#   def require_login
-#     puts "User signed in? #{user_signed_in?}"
-#     return if user_signed_in?
+  #   def require_login
+  #     puts "User signed in? #{user_signed_in?}"
+  #     return if user_signed_in?
 
-#     redirect_to new_user_session_path
-#   end
+  #     redirect_to new_user_session_path
+  #   end
 end
