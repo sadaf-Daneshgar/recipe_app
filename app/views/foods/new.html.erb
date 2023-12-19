@@ -2,24 +2,19 @@
 
 <%= form_with(model: @food, url: user_foods_path(@user), local: true, method: :post) do |f| %>  <div>
     <%= f.label :name %> <br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autocomplete: "off"%>
   </div>
 
   <div>
     <%= f.label :measurement_unit %> <br />
-    <%= f.select :measurement_unit, ['mg', 'gr', 'kg', 'oz', 'lb'] %>
+    <%= f.select :measurement_unit, ['mg', 'gr', 'kg', 'oz', 'lb', 'units'] %>
   </div>
 
   <div>
     <%= f.label :price %> <br />
-    <%= f.text_field :price %>
+    <%= f.number_field :price, in: 1..1000, step: 1, autocomplete: "off" %>
   </div>
 
-  <div>
-    <%= f.label :quantity %> <br />
-    <%= f.text_field :quantity %>
-  </div>
-  
   <div>
     <%= f.submit %>
   </div>
