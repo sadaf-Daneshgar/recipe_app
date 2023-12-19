@@ -77,4 +77,7 @@ Rails.application.configure do
 
   # ADDITION - Allow unconfirmed access for 2 days
   config.allow_unconfirmed_access_for = 2.days
+
+  # Bullet gem configuration
+  Bullet.n_plus_one_query_enable     = true
 end
