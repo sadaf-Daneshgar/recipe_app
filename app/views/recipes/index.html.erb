@@ -1,2 +1,16 @@
-<h1>Recipes!</h1>
-<p>This is the Recipes index page!</p>
+<div class="container">
+  <h1>Recipes!</h1>
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-container">
+      <div class="recipe-info">
+        <h2> <%= link_to recipe.name, user_recipes_path(@user) %></h2>
+        <p>
+          <%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete %>
+        </p>
+      </div>
+      <div>
+       <h3>  <%= recipe.description %></h3>
+      </div>
+    </div>
+  <% end %><%= link_to "New Recipe", new_user_recipe_path(@user) %>
+</div>

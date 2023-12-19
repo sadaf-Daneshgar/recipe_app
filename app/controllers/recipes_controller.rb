@@ -1,13 +1,35 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @user = User.find(params[:user_id])
+    @recipes = @user.recipes
   end
 
-  def show
-    @recipe = Recipe.find_by_id(params[:id])
+  def show; end
 
-    return unless @recipe.nil?
+  def new
+    @user = current_user
+    @recipe = @user.recipes.build
+  end
 
-    redirect_to recipes_path
+  def create
+    @recipe = current_user.recipes.build(recipe_params)
+    if @recipe.save
+      redirect_to user_recipes_path(current_user)
+    else
+      puts @recipe.errors.full_messages
+      render :new
+    end
+  end
+
+  def destroy
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe.destroy
+    redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully destroyed.'
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public)
   end
 end
