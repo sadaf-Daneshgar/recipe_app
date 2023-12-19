@@ -1,2 +1,8 @@
 <h1>Recipes!</h1>
-<p>This is the Recipes show page!</p>
+<div>
+  <h2><%= @recipe.name %></h2>
+  <div>
+    <p>preparation time: <%= @recipe.preparation_time %></p>
+    <p>cooking time: <%= @recipe.cooking_time %></p>
+  </div>
+</div>

@@ -1,2 +1,14 @@
 <h1>Recipes!</h1>
-<p>This is the Recipes index page!</p>
+<div>
+  <% @recipes.each do |recipe| %>
+    <div>
+      <%= link_to recipe.name, user_recipe_path(current_user, recipe) %>
+      <p>
+        <%= recipe.description %>
+      </p>
+      <%= link_to 'Remove', user_recipe_path(current_user, recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Recipe', new_user_recipe_path(current_user) %>

@@ -4,10 +4,29 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find_by_id(params[:id])
+    @user = User.find(params[:current_user])
+    @recipe = @user.recipes.find_by_id(params[:id])
+  end
 
-    return unless @recipe.nil?
+  def new
+    @user = User.find(params[:user_id])
+    @recipe = Recipe.new
+  end
 
-    redirect_to recipes_path
+  def create
+    @recipe = current_user.recipes.build(recipe_params)
+
+    if @recipe.save
+      flash[:notice] = 'Recipe created successfully'
+      redirect_to user_recipes_path(current_user)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time)
   end
 end
