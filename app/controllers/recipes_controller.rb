@@ -21,6 +21,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = current_user.recipes.find(params[:id])
+    @recipe.destroy
+    redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully destroyed.'
+  end
+
   private
 
   def recipe_params

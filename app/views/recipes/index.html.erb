@@ -1,14 +1,16 @@
-<h1>Recipes!</h1>
-<div>
+<div class="container">
+  <h1>Recipes!</h1>
   <% @recipes.each do |recipe| %>
-    <div>
-      <%= link_to recipe.name, user_recipes_path(@user) %>
-      <p>
-        <%= recipe.description %>
-      </p>
-      <%= link_to 'Remove', user_recipes_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="recipe-container">
+      <div class="recipe-info">
+        <h2> <%= link_to recipe.name, user_recipes_path(@user) %></h2>
+        <p>
+          <%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete %>
+        </p>
+      </div>
+      <div>
+       <h3>  <%= recipe.description %></h3>
+      </div>
     </div>
-  <% end %>
+  <% end %><%= link_to "New Recipe", new_user_recipe_path(@user) %>
 </div>
-
-<%= link_to "New Recipe", new_user_recipe_path(@user) %>

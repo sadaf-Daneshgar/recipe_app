@@ -13,3 +13,18 @@
 .navbar > * {
   margin: 0 1rem;
 }
+
+.container {
+  align-items: center;
+  text-align: center;
+}
+
+/* Container for each recipe */
+.recipe-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0 60px;
+}
