@@ -24,7 +24,7 @@ class FoodsController < ApplicationController
     redirect_to user_foods_path(current_user), notice: 'Food successfully deleted'
   end
 
-  private 
+  private
 
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
