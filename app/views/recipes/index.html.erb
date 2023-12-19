@@ -2,11 +2,11 @@
 <div>
   <% @recipes.each do |recipe| %>
     <div>
-      <%= link_to recipe.name, user_recipe_path(@user) %>
+      <%= link_to recipe.name, user_recipes_path(@user) %>
       <p>
         <%= recipe.description %>
       </p>
-      <%= link_to 'Remove', user_recipe_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Remove', user_recipes_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
 </div>
