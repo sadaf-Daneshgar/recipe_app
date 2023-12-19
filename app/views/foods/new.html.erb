@@ -1,0 +1,26 @@
+<h1>Add a food 🥓</h1>
+
+<%= form_with(model: @food, url: user_foods_path(@user), local: true, method: :post) do |f| %>  <div>
+    <%= f.label :name %> <br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :measurement_unit %> <br />
+    <%= f.select :measurement_unit, ['mg', 'gr', 'kg', 'oz', 'lb'] %>
+  </div>
+
+  <div>
+    <%= f.label :price %> <br />
+    <%= f.text_field :price %>
+  </div>
+
+  <div>
+    <%= f.label :quantity %> <br />
+    <%= f.text_field :quantity %>
+  </div>
+  
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
