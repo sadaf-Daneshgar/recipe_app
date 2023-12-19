@@ -4,5 +4,11 @@
   <div>
     <p>preparation time: <%= @recipe.preparation_time %></p>
     <p>cooking time: <%= @recipe.cooking_time %></p>
+    <p><%= @recipe.description %></p>
+  </div>
+  <div>
+    <%= link_to "Generate Shopping List", user_recipe_shopping_list_path(current_user, @recipe), method: :post %>
+    <%= link_to "Add ingredients", new_user_recipe_ingredient_path(current_user, @recipe) %>
+    <br>
   </div>
 </div>

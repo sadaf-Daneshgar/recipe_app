@@ -1,12 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @user = User.find(params[:user_id])
+    @recipes = @user.recipes
   end
 
-  def show
-    @user = User.find(params[:current_user])
-    @recipe = @user.recipes.find_by_id(params[:id])
-  end
+  def show; end
 
   def new
     @user = User.find(params[:user_id])
@@ -15,10 +13,8 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-
     if @recipe.save
-      flash[:notice] = 'Recipe created successfully'
-      redirect_to user_recipes_path(current_user)
+      redirect_to user_recipe_path(current_user)
     else
       render :new
     end
