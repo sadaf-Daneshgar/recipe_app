@@ -42,6 +42,11 @@
   height: 0;
 }
 
+.switch input:disabled + .slider {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .slider {
   position: absolute;
   cursor: pointer;
