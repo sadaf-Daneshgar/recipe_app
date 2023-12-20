@@ -16,6 +16,7 @@
         <% if user_signed_in? %>
           <%= link_to 'My Foods', user_foods_path(current_user) %>
           <%= link_to 'My Recipes', user_recipes_path(current_user) %>
+          <%= link_to 'Public Recipes', public_recipes_path %>
         <% end %>
       </div>
 

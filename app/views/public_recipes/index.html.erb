@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Public Recipes!</h1>
+  <% @p_recipes.each do |recipe| %>
+    <div class="recipe-container">
+      <div class="recipe-info">
+       <h2> <%= link_to recipe.name, public_recipes_path%></h2>
+       <h3>  <%= recipe.description %></h3>
+      </div>
+      <% if recipe.user == current_user %>
+        <%= button_to "Remove", user_recipe_path(recipe.user, recipe), method: :delete%>
+      <% end %>
+    </div>
+  <% end %>
+</div>
