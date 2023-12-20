@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.find(params[:id])
-  
+
     if @recipe.update(recipe_params)
       redirect_to user_recipe_path(@user, @recipe), notice: 'Recipe was successfully updated.'
     else
