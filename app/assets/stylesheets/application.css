@@ -82,6 +82,11 @@ input:checked + .slider::before {
   transform: translateX(26px);
 }
 
+.switch input:disabled + .slider {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 button {
   padding: 10px;
   margin: 10px 0;
@@ -103,8 +108,18 @@ button {
   border-radius: 4px;
 }
 
+.add-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 button:hover {
   background-color: #0c7cd5;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .details {
