@@ -1,2 +1,7 @@
-<h1>Users!</h1>
-<p>This is the Users' index page!</p>
+<div class="img">
+    <div class="welcome">Welcome to our Recipe App Dear:
+        <% if user_signed_in? %>
+            <%= current_user.name %> 👋😊
+        <% end %>
+    </div>
+</div>
