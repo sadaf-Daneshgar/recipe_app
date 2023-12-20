@@ -52,8 +52,7 @@ class RecipesController < ApplicationController
 
     @data = {
       total_items: missing_foods.size,
-      total_price: missing_foods.sum { |recipe_food| recipe_food.food.price * (recipe_food.food.quantity - recipe_food.quantity) },
-      quantity: missing_foods.sum { |recipe_food| recipe_food.quantity }
+      total_price: missing_foods.sum { |recipe_food| recipe_food.quantity * recipe_food.food.price }
     }
     @missing_foods = missing_foods
   end
