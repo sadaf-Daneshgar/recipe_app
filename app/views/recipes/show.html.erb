@@ -2,24 +2,48 @@
   <h1><%= @recipe.name %></h1>
   <div class="genral-detal">
     <div class="details">
-    <p>Preparation time: <%= @recipe.preparation_time %></p>
-    <p>Cooking time: <%= @recipe.cooking_time %></p>
-    <p><%= @recipe.description %></p>
-     <%= form_with(model: @recipe, url: user_recipe_path(@user, @recipe), local: true, method: :patch) do |f| %>
-      <div>
-        <p><%= f.label :public %>
-          <label class="switch">
-            <%= f.hidden_field :public, value: false %>
-            <%= f.check_box :public, { onchange: 'this.form.submit()' }, true, false %>
-            <span class="slider"></span>
-          </label>
-        </p>
-      </div>
-    <% end %>
+      <p>Preparation time: <%= @recipe.preparation_time %></p>
+      <p>Cooking time: <%= @recipe.cooking_time %></p>
+      <p><%= @recipe.description %></p>
+      <%= form_with(model: @recipe, url: user_recipe_path(@user, @recipe), local: true, method: :patch) do |f| %>
+        <div>
+          <p><%= f.label :public %>
+            <label class="switch">
+              <%= f.hidden_field :public, value: false %>
+              <%= f.check_box :public, { onchange: 'this.form.submit()' }, true, false %>
+              <span class="slider"></span>
+            </label>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
+
   <div class="btns">
     <%= button_to "Generate Shopping List" %>
     <%= link_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-btn" %>
-   </div>
+  </div>
+
+  <div>
+    <table>
+      <thead>
+          <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>    
+        <% @recipe.recipe_foods.each do |food| %>
+          <tr>
+              <td><%= food.name %></td>
+              <td><%= food.quantity %> <%= food.measurement_unit %> </td>
+              <td>$ <%= food.quantity * food.price %></td>
+              <td><%= button_to 'Remove', user_food_path(@user, food), method: :delete%>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
