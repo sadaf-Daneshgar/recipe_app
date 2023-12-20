@@ -9,11 +9,16 @@ body {
 }
 
 .img {
-  background-image: url('backgr.jpg');
+  background-image: url('recipe_app.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 670px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .navbar {
@@ -23,8 +28,9 @@ body {
   width: 100%;
   font-size: 1.2rem;
   font-weight: 900;
-  background-color: #f8f8f8;
-  padding: 1rem;
+  background-color: #806443;
+  padding: 1.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-item {
@@ -42,20 +48,11 @@ body {
 
 .nav-item a {
   text-decoration: none;
-  color: #333;
-}
-
-.logout {
-  background-color: #cdcccc;
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 6px;
 }
 
 a:hover {
-  color: #0c7cd5;
+  color: #ddd1c7;
 }
 
 .button {
@@ -81,7 +78,14 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   border: 1px solid #ccc;
-  margin: 0 60px;
+  width: 40%;
+  margin: 0 auto;
+  padding: 6px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* style for toggle button */
@@ -90,12 +94,6 @@ a:hover {
   display: inline-block;
   width: 60px;
   height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
 }
 
 .slider {
@@ -125,7 +123,7 @@ a:hover {
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #4caf50;
 }
 
 input:focus + .slider {
@@ -147,26 +145,10 @@ button {
   padding: 10px;
   margin: 10px 0;
   color: #fff;
-  background-color: #2196f3;
+  background-color: #f44336;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.add-btn {
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  text-decoration: none;
-  color: #fff;
-  background-color: #2196f3;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.add-btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
 
 button:hover {
@@ -185,15 +167,11 @@ button:disabled {
 .btns {
   display: flex;
   gap: 1em;
+  margin-left: 25rem;
 }
 
 .genral-detal {
   margin-left: 20rem;
-}
-
-p {
-  font-size: 20px;
-  font-weight: bold;
 }
 
 /* Add some basic styling to the form */
@@ -224,4 +202,48 @@ input[type="submit"]:hover {
 
 .food {
   padding: 12px;
+}
+
+/* Style for foods */
+
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 50%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto 20px;
+}
+
+thead {
+  background-color: #b89164;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.add-food-link {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  float: right;
+  margin-right: 1rem;
+  text-decoration: none;
+  border-radius: 4px;
 }
