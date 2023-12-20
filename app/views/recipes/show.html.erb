@@ -1,14 +1,24 @@
-<h1>Recipes!</h1>
-<div>
-  <h2><%= @recipe.name %></h2>
-  <div>
-    <p>preparation time: <%= @recipe.preparation_time %></p>
-    <p>cooking time: <%= @recipe.cooking_time %></p>
+<div class="container">
+  <h1><%= @recipe.name %></h1>
+  <div class="genral-detal">
+    <div class="details">
+    <p>Preparation time: <%= @recipe.preparation_time %></p>
+    <p>Cooking time: <%= @recipe.cooking_time %></p>
     <p><%= @recipe.description %></p>
+     <%= form_with(model: @recipe, url: user_recipe_path(@user, @recipe), local: true, method: :patch) do |f| %>
+      <div>
+        <p><%= f.label :public %>
+        <label class="switch">
+          <%= f.check_box :public, {}, true, false %>
+          <span class="slider"></span>
+          </label>
+          </p>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= link_to "Generate Shopping List", user_recipe_shopping_list_path(current_user, @recipe), method: :post %>
-    <%= link_to "Add ingredients", new_user_recipe_ingredient_path(current_user, @recipe) %>
-    <br>
+  <div class="btns">
+    <%= button_to "Generate Shopping List" %>
+    <%= link_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-btn" %>
+   </div>
   </div>
 </div>
