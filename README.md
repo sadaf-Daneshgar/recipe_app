@@ -1,4 +1,4 @@
-# Recipe App🍲
+<h1 align="center">Recipe App🍲</h1>
 
 ## 📗 Table of Contents
 
