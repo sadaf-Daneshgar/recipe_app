@@ -8,7 +8,7 @@
 
     <div class="food">
       <%= f.label :quantity %> :
-      <%= f.text_field :quantity %>
+      <%= f.number_field :quantity, in: 1..1000, step: 1, autocomplete: "off" %>
     </div>
 
     <div>

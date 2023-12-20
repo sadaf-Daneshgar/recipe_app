@@ -10,7 +10,8 @@
           <p><%= f.label :public %>
             <label class="switch">
               <%= f.hidden_field :public, value: false %>
-              <%= f.check_box :public, { onchange: 'this.form.submit()' }, true, false %>
+              <%= f.check_box :public, { onchange: 'this.form.submit()', 
+                                         disabled: @user != current_user }, true, false %>
               <span class="slider"></span>
             </label>
           </p>
@@ -21,7 +22,8 @@
 
   <div class="btns">
     <%= button_to "Generate Shopping List" %>
-    <%= link_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-btn" %>
+    <%= button_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-btn", 
+                  method: :get, disabled: @recipe.user != current_user  %>
   </div>
 
   <div>
@@ -35,12 +37,12 @@
           </tr>
       </thead>
       <tbody>    
-        <% @recipe.recipe_foods.each do |food| %>
+        <% @recipe_foods.each do |recipe_food| %>
           <tr>
-              <td><%= food.name %></td>
-              <td><%= food.quantity %> <%= food.measurement_unit %> </td>
-              <td>$ <%= food.quantity * food.price %></td>
-              <td><%= button_to 'Remove', user_food_path(@user, food), method: :delete%>
+              <td><%= recipe_food.food.name %></td>
+              <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %> </td>
+              <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
+              <td><%= button_to 'Remove', user_recipe_recipe_food_path(@user, @recipe, recipe_food), method: :delete, disabled: recipe.user != current_user %></td>
           </tr>
         <% end %>
       </tbody>
