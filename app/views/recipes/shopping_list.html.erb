@@ -1,0 +1,9 @@
+<h1><%= @recipe.name %> Shopping List</h1>
+
+<p>Total food items: <%= @data[:total_items] %></p>
+<p>Total price: $<%= @data[:total_price] %></p>
+
+<h2>Ingredients</h2>
+<% @recipe.recipe_foods.each do |recipe_food| %>
+  <p><%= recipe_food.food.name %>: <%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></p>
+<% end %>

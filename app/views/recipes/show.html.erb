@@ -21,7 +21,7 @@
   </div>
 
   <div class="btns">
-    <%= button_to "Generate Shopping List" %>
+    <%= button_to "Generate Shopping List", shopping_list_user_recipe_path(@user, @recipe), method: :get %>
     <%= button_to "Add ingredients", new_user_recipe_recipe_food_path(@user, @recipe), class: "add-btn", 
                   method: :get, disabled: @recipe.user != current_user  %>
   </div>
@@ -42,7 +42,7 @@
               <td><%= recipe_food.food.name %></td>
               <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %> </td>
               <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
-              <td><%= button_to 'Remove', user_recipe_recipe_food_path(@user, @recipe, recipe_food), method: :delete, disabled: recipe.user != current_user %></td>
+              <td><%= button_to 'Remove', user_recipe_recipe_food_path(@user, @recipe, recipe_food), method: :delete, disabled: @user != current_user %></td>
           </tr>
         <% end %>
       </tbody>
