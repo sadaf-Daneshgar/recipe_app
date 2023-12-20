@@ -5,7 +5,7 @@
       <div class="recipe-info">
         <h2> <%= link_to recipe.name, user_recipe_path(@user, recipe) %></h2>
         <p>
-          <%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete %>
+          <%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete%>
         </p>
       </div>
       <div>

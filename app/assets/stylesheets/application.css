@@ -25,7 +25,6 @@
   justify-content: space-around;
   align-items: center;
   border: 1px solid #ccc;
-  padding: 10px;
   margin: 0 60px;
 }
 
@@ -84,16 +83,24 @@ input:checked + .slider::before {
 }
 
 button {
-  display: inline-block;
-  padding: 10px 20px;
+  padding: 10px;
   margin: 10px 0;
-  font-size: 16px;
   color: #fff;
   background-color: #2196f3;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.add-btn {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
   text-decoration: none;
+  color: #fff;
+  background-color: #2196f3;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 button:hover {
@@ -116,4 +123,34 @@ button:hover {
 p {
   font-size: 20px;
   font-weight: bold;
+}
+
+/* Add some basic styling to the form */
+.form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  gap: 1em;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Add some hover effect to the submit button */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.food {
+  padding: 12px;
 }
