@@ -2,7 +2,7 @@
 
 <%= form_with(model: @recipe, url: user_recipes_path(@user), local: true, method: :post) do |f| %>  <div>
     <%= f.label :name %> <br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autocomplete: "off" %>
   </div>
 
   <div>
@@ -12,12 +12,12 @@
 
   <div>
     <%= f.label :preparation_time %> <br />
-    <%= f.text_field :preparation_time %>
+    <%= f.number_field :preparation_time, in: 1..1000, step: 1, autocomplete: "off" %>
   </div>
 
   <div>
     <%= f.label :cooking_time %> <br />
-    <%= f.text_field :cooking_time %>
+    <%= f.number_field :cooking_time, in: 1..1000, step: 1, autocomplete: "off" %>
   </div>
 
   <div>

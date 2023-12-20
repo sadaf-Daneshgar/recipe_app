@@ -28,8 +28,19 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.includes(:recipe_foods).find(params[:id])
     RecipeFood.where(recipe_id: @recipe.id).destroy_all
     @recipe.destroy
-    
+
     redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully destroyed.'
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.find(params[:id])
+  
+    if @recipe.update(recipe_params)
+      redirect_to user_recipe_path(@user, @recipe), notice: 'Recipe was successfully updated.'
+    else
+      render :show
+    end
   end
 
   private

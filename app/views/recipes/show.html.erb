@@ -8,11 +8,12 @@
      <%= form_with(model: @recipe, url: user_recipe_path(@user, @recipe), local: true, method: :patch) do |f| %>
       <div>
         <p><%= f.label :public %>
-        <label class="switch">
-          <%= f.check_box :public, {}, true, false %>
-          <span class="slider"></span>
+          <label class="switch">
+            <%= f.hidden_field :public, value: false %>
+            <%= f.check_box :public, { onchange: 'this.form.submit()' }, true, false %>
+            <span class="slider"></span>
           </label>
-          </p>
+        </p>
       </div>
     <% end %>
   </div>
