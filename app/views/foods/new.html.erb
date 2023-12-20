@@ -16,6 +16,11 @@
   </div>
 
   <div>
+    <%= f.label :quantity %> <br />
+    <%= f.number_field :quantity, in: 1..1000, step: 1, autocomplete: "off" %>
+  </div>
+
+  <div>
     <%= f.submit %>
   </div>
 <% end %>

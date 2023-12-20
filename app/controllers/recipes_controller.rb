@@ -46,10 +46,16 @@ class RecipesController < ApplicationController
 
   def shopping_list
     @recipe = Recipe.includes([recipe_foods: [:food]]).find(params[:id])
+    user_foods = current_user.foods
+
+    missing_foods = @recipe.recipe_foods.reject { |recipe_food| user_foods.include?(recipe_food.food) }
+
     @data = {
-      total_items: @recipe.recipe_foods.size,
-      total_price: @recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price * recipe_food.quantity }
+      total_items: missing_foods.size,
+      total_price: missing_foods.sum { |recipe_food| recipe_food.food.price * (recipe_food.food.quantity - recipe_food.quantity) },
+      quantity: missing_foods.sum { |recipe_food| recipe_food.quantity }
     }
+    @missing_foods = missing_foods
   end
 
   private
