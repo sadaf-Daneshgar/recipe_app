@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Testing Recipe#show view, it', type: :feature do 
+RSpec.describe 'Testing Recipe#show view, it', type: :feature do
   before(:each) do
     @user = User.create(name: 'Test User', email: 'example@test.com', password: '123456')
     @user.confirm
@@ -38,7 +38,7 @@ RSpec.describe 'Testing Recipe#show view, it', type: :feature do
     expect(page).to have_button('Add ingredients')
   end
 
-#   it 'should have a button to generate a shopping list' do
-#     expect(page).to have_link('Generate Shopping List', href: user_recipe_shopping_list_path(@user, @recipe))
-#   end
+  #   it 'should have a button to generate a shopping list' do
+  #     expect(page).to have_link('Generate Shopping List', href: user_recipe_shopping_list_path(@user, @recipe))
+  #   end
 end

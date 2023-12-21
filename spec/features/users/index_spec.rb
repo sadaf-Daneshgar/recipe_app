@@ -8,7 +8,7 @@ RSpec.describe 'Testing User#index view, it', type: :feature do
     visit root_path
   end
 
-    it 'should greet the user' do
-      expect(page).to have_content("Welcome to our Recipe App Dear: #{@user.name}")
-    end
+  it 'should greet the user' do
+    expect(page).to have_content("Welcome to our Recipe App Dear: #{@user.name}")
+  end
 end

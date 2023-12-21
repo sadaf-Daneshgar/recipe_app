@@ -5,9 +5,9 @@ RSpec.describe 'Testing RecipeFood#new view, it', type: :feature do
     @user = User.create(name: 'Test User', email: 'example@test.com', password: '123456')
     @user.confirm
     sign_in @user
-    @recipe = Recipe.create(name: 'Recipe', description: 'Test Description', 
+    @recipe = Recipe.create(name: 'Recipe', description: 'Test Description',
                             preparation_time: 10, cooking_time: 10,
-                            public: true, user_id: @user.id) 
+                            public: true, user_id: @user.id)
     @food = Food.create(name: 'Test Food', measurement_unit: 'test', price: 10, user_id: @user.id)
     visit new_user_recipe_recipe_food_path(@user, @recipe)
   end

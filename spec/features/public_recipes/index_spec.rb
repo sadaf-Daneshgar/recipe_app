@@ -5,12 +5,14 @@ RSpec.describe 'Testing PublicRecipe#index view, it', type: :feature do
     @user = User.create(name: 'Test User', email: 'example@test.com', password: '123456')
     @user.confirm
     sign_in @user
-    @p_recipe = Recipe.create(name: 'Public Recipe', description: 'Test Description', 
-                             preparation_time: 10, cooking_time: 10,
-                             public: true, user_id: @user.id)
-    4.times { |i| Recipe.create(name: "Recipe ##{i}", description: "Description ##{i}", 
-                                preparation_time: 10, cooking_time: 10,
-                                public: false, user_id: @user.id) }
+    @p_recipe = Recipe.create(name: 'Public Recipe', description: 'Test Description',
+                              preparation_time: 10, cooking_time: 10,
+                              public: true, user_id: @user.id)
+    4.times do |i|
+      Recipe.create(name: "Recipe ##{i}", description: "Description ##{i}",
+                    preparation_time: 10, cooking_time: 10,
+                    public: false, user_id: @user.id)
+    end
     visit public_recipes_path
   end
 
