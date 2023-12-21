@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   </head>
 
   <body>
@@ -23,8 +24,8 @@
       <div class="nav-item">
         <% unless current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
             <% if user_signed_in? %>
-              <%= link_to 'Reset Password', edit_user_registration_path %>
-              <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "button"%>
+              <%= link_to 'Reset Password', edit_user_registration_path, class: "logout" %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "logout"%>
             <% else %>
               <%= link_to 'Sign up', new_user_registration_path %>
               <%= link_to 'Login', new_user_session_path %>
