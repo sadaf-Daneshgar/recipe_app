@@ -176,9 +176,9 @@ button:disabled {
 
 /* Add some basic styling to the form */
 .form {
-  max-width: 400px;
+  max-width: 450px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 24px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
