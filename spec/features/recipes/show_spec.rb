@@ -38,7 +38,7 @@ RSpec.describe 'Testing Recipe#show view, it', type: :feature do
     expect(page).to have_button('Add ingredients')
   end
 
-  #   it 'should have a button to generate a shopping list' do
-  #     expect(page).to have_link('Generate Shopping List', href: user_recipe_shopping_list_path(@user, @recipe))
-  #   end
+  it 'should have a button to generate a shopping list' do
+    expect(page).to have_button('Generate Shopping List')
+  end
 end
