@@ -10,7 +10,7 @@ RSpec.describe 'Testing Recipe#show view, it', type: :feature do
                             preparation_time: 10, cooking_time: 10,
                             public: false, user_id: @user.id)
     @food = Food.create(name: 'Test Food', measurement_unit: 'test', price: 10, user_id: @user2.id)
-    @food2 = Food.create(name: "Food #2", measurement_unit: 'unit', price: 1, user_id: @user.id)
+    @food2 = Food.create(name: 'Food #2', measurement_unit: 'unit', price: 1, user_id: @user.id)
 
     @recipe_food = RecipeFood.create(recipe_id: @recipe.id, food_id: @food.id, quantity: 10)
 
