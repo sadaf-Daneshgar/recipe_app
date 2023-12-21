@@ -1,16 +1,22 @@
 <div class="container">
   <h1>Recipes 🍲</h1>
-  <% @recipes.each do |recipe| %>
-    <div class="recipe-container">
-      <div class="recipe-info">
-        <p><%= link_to recipe.name, user_recipe_path(@user, recipe) %></p>
-        <p>
-          <%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete%>
-        </p>
-      </div>
-      <div>
-       <h3>  <%= recipe.description %></h3>
-      </div>
-    </div>
-  <% end %><%= link_to "New Recipe", new_user_recipe_path(@user), class: "add-food-link" %>
+  <table class="recipe-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= link_to recipe.name, user_recipe_path(@user, recipe) %></td>
+          <td><%= recipe.description %></td>
+          <td><%= button_to "Remove", user_recipe_path(@user, recipe), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Recipe", new_user_recipe_path(@user), class: "add-food-link" %>
 </div>

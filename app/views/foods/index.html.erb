@@ -1,7 +1,6 @@
 <h1>Foods 🍔</h1>
 
-<%= link_to 'Add a food', new_user_food_path(@user), class: "add-food-link" %>
-<div>
+<div class="table-container">
   <table>
     <thead>
         <tr>
@@ -24,4 +23,5 @@
         <% end %>
     </tbody>
   </table>
+  <%= link_to 'Add a food', new_user_food_path(@user), class: "add-food-link" %>
 </div>

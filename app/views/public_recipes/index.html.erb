@@ -1,13 +1,24 @@
 <div class="container">
   <h1>Public Recipes 🌐</h1>
-  <% @p_recipes.each do |recipe| %>
-    <div class="recipe-container">
-      <div class="recipe-info">
-       <h2> <%= link_to recipe.name, user_recipe_path(recipe.user, recipe)%></h2>
-       <h3>  <%= recipe.description %></h3>
-      </div>
-      <%= button_to "Remove", user_recipe_path(recipe.user, recipe), method: :delete, 
-                              disabled: recipe.user != current_user, class: "disabled" %>
-    </div>
-  <% end %>
+  <table class="recipe-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @p_recipes.each do |recipe| %>
+        <tr>
+          <td><%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %></td>
+          <td><%= recipe.description %></td>
+          <td>
+            <%= button_to "Remove", user_recipe_path(recipe.user, recipe), method: :delete,
+                          disabled: recipe.user != current_user, class: "disabled" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
