@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "Testing User#index view, it", type: :feature do
-
+RSpec.describe 'Testing User#index view, it', type: :feature do
 end
