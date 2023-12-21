@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
     RecipeFood.where(recipe_id: @recipe.id).destroy_all
     @recipe.destroy
 
-    redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully destroyed.'
+    redirect_to request.referrer, notice: 'Recipe was successfully destroyed.'
   end
 
   def update
