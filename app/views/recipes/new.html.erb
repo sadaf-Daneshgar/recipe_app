@@ -1,0 +1,32 @@
+<h1>Create your recipe📝😍</h1>
+
+<div class="form">
+  <%= form_with(model: @recipe, url: user_recipes_path(@user), local: true, method: :post) do |f| %>  <div>
+    <%= f.label :name %> <br />
+    <%= f.text_field :name, autocomplete: "off" %>
+  </div>
+
+  <div>
+    <%= f.label :description %> <br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :preparation_time %> <br />
+    <%= f.number_field :preparation_time, in: 1..1000, step: 1, autocomplete: "off" %>
+  </div>
+
+  <div>
+    <%= f.label :cooking_time %> <br />
+    <%= f.number_field :cooking_time, in: 1..1000, step: 1, autocomplete: "off" %>
+  </div>
+
+  <div>
+    <%= f.label :public %>
+    <%= f.check_box :public %>
+
+  <div>
+    <%= f.submit class: "button" %>
+  </div>
+<% end %>
+</div>

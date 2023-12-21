@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.img {
+  background-image: url('recipe_app.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 670px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 900;
+  background-color: #806443;
+  padding: 1.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+  display: flex;
+  gap: 1em;
+}
+
+.welcome {
+  text-align: center;
+  padding-top: 15%;
+  font-style: oblique;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #ddd1c7;
+}
+
+.button {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.03em;
+}
+
+.logout:hover {
+  color: #ddd1c7;
+  background-color: transparent !important;
+  cursor: pointer;
+}
+
+/* Adjusted margin for better spacing between elements */
+.nav-item > * {
+  margin: 0 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* style for toggle button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 17px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.switch input:disabled + .slider {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button {
+  padding: 10px;
+  margin: 10px 0;
+  color: #fff;
+  background-color: #f44336;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0c7cd5;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.details {
+  text-align: justify;
+}
+
+.details > * {
+  margin: 1rem auto;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+  width: 50%;
+}
+
+.genral-detal {
+  display: flex;
+  left: 50%;
+  width: 50%;
+  align-items: center;
+}
+
+.genral-detal > * {
+  margin: 1rem auto;
+}
+
+/* Add some basic styling to the form */
+.form {
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 24px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  gap: 1em;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Add some hover effect to the submit button */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.food {
+  padding: 12px;
+}
+
+/* Style for foods */
+
+h1 {
+  text-align: center;
+  margin: 12px;
+}
+
+table {
+  max-width: 70%;
+  min-width: 25%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto 20px;
+}
+
+thead {
+  background-color: #b89164;
+  color: #fff;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.add-food-link {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shopping {
+  display: flex;
+  width: 100%;
+  margin: 4em 0 1em 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.shopping > * {
+  margin: 0 2em;
+}

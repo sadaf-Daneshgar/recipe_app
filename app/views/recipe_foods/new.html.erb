@@ -1,0 +1,18 @@
+<div class="form">
+  <h1>Add the Ingredients of recipe</h1>
+  <%= form_with(model: [@user, @recipe, @recipe_food], url: user_recipe_recipe_foods_path(@user, @recipe), local: true, method: :post) do |f| %>
+    <div class="food">
+      <%= f.label :food_id %> :
+      <%= f.collection_select :food_id, Food.all, :id, :name %>
+    </div>
+
+    <div class="food">
+      <%= f.label :quantity %> :
+      <%= f.number_field :quantity, in: 1..1000, step: 1, autocomplete: "off" %>
+    </div>
+
+    <div>
+      <%= f.submit "Add Ingredient" %>
+    </div>
+  <% end %>
+</div>

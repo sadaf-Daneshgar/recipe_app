@@ -1,0 +1,34 @@
+<h1><%= @recipe.name %> Shopping List</h1>
+
+<div class="container">
+  <% if @data[:total_items] == 0 %> 
+    <div class="shopping">
+      <h3>You have all the ingredients you need!</h3>
+    </div>
+  <% else %>
+    <div class="shopping">
+      <h3>Total food items: <%= @data[:total_items] %></h3>
+      <h3>Total price: $<%= @data[:total_price] %></h3>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+            <tr>
+              <th>Food</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @missing_foods.each do |missing| %>
+            <tr>
+              <td><%= missing.food.name %> </td>
+              <td><%= missing.quantity %> <%= missing.food.measurement_unit %> </td>
+              <td>$ <%= missing.food.price * missing.quantity %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>
