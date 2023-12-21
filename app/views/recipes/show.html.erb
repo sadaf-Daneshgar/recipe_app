@@ -2,16 +2,18 @@
   <h1><%= @recipe.name %> 📝</h1>
   <div class="genral-detal">
     <div class="details">
-      <p>Preparation time: <%= @recipe.preparation_time %></p>
-      <p>Cooking time: <%= @recipe.cooking_time %></p>
-      <p><%= @recipe.description %></p>
+      <h3>Preparation time: <%= @recipe.preparation_time %></h3>
+      <h3>Cooking time: <%= @recipe.cooking_time %></h3>
+      <h3><%= @recipe.description %></h3>
+    </div>
+    <div>
       <%= form_with(model: @recipe, url: user_recipe_path(@user, @recipe), local: true, method: :patch) do |f| %>
         <div>
           <p><%= f.label :public %>
             <label class="switch">
               <%= f.hidden_field :public, value: false %>
               <%= f.check_box :public, { onchange: 'this.form.submit()', 
-                                         disabled: @user != current_user }, true, false %>
+                                        disabled: @user != current_user }, true, false %>
               <span class="slider"></span>
             </label>
           </p>

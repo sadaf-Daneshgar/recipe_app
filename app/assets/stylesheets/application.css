@@ -82,6 +82,8 @@ a:hover {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
 }
@@ -162,14 +164,26 @@ button:disabled {
   text-align: justify;
 }
 
+.details > * {
+  margin: 1rem auto;
+}
+
 .btns {
   display: flex;
+  justify-content: space-around;
   gap: 1em;
-  margin-left: 25rem;
+  width: 50%;
 }
 
 .genral-detal {
-  margin-left: 20rem;
+  display: flex;
+  left: 50%;
+  width: 50%;
+  align-items: center;
+}
+
+.genral-detal > * {
+  margin: 1rem auto;
 }
 
 /* Add some basic styling to the form */
@@ -210,7 +224,8 @@ h1 {
 }
 
 table {
-  width: 50%;
+  max-width: 70%;
+  min-width: 25%;
   text-align: center;
   border-collapse: collapse;
   margin: 0 auto 20px;
@@ -231,6 +246,7 @@ td {
 
 th {
   font-weight: bold;
+  text-align: center;
 }
 
 tbody tr:hover {
@@ -250,4 +266,16 @@ tbody tr:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.shopping {
+  display: flex;
+  width: 100%;
+  margin: 4em 0 1em 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.shopping > * {
+  margin: 0 2em;
 }

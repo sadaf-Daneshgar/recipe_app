@@ -12,7 +12,7 @@
       <% @p_recipes.each do |recipe| %>
         <tr>
           <td><%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %></td>
-          <td><%= recipe.description %></td>
+          <td><%= truncate(recipe.description, length: 30) %></td>
           <td>
             <%= button_to "Remove", user_recipe_path(recipe.user, recipe), method: :delete,
                           disabled: recipe.user != current_user, class: "disabled" %>
