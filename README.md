@@ -127,7 +127,7 @@ If you like this project, kindly drop a start ⭐️ for the [repository](https:
 
 **I would like to thank the following individuals and organizations for their contribution to this project.**
 
-- I would like to express my heartfelt gratitude to [**Microvere**](https://www.microverse.org/?grsf=mohammad-a-nbtazu) for the invaluable learning experience they have provided.
+- I would like to express my heartfelt gratitude to [**Microverse**](https://www.microverse.org/?grsf=mohammad-a-nbtazu) for the invaluable learning experience they have provided.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
