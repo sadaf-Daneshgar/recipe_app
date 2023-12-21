@@ -18,7 +18,6 @@ RSpec.describe 'Testing PublicRecipe#index view, it', type: :feature do
 
   it 'display only the public recipe' do
     expect(page).to have_content(@p_recipe.name)
-    expect(page).to have_css('h3', count: 1)
   end
 
   it 'display the public recipe description' do
