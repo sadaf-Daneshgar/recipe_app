@@ -26,6 +26,6 @@ RSpec.describe 'Testing Recipe#show view, it', type: :feature do
     click_button('Generate Shopping List')
     expect(page).to have_content('Total food items: 1')
     expect(page).to have_content('Total price: $100')
-    expect(page).to have_content('Test Food: 10 test')
+    expect(page).to have_content('Test Food 10 test')
   end
 end
